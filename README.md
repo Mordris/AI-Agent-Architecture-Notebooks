@@ -40,6 +40,15 @@ This repository explores the entire stack required for building modern AI applic
 - **4. [`4_advanced_rag_retrieval_strategies.ipynb`](./4_advanced_rag_retrieval_strategies.ipynb)**
   - A comprehensive deep dive into building and evaluating a production-grade RAG pipeline. This notebook covers data ingestion, implementing advanced retrieval strategies (MMR, custom heuristics, Cohere Re-ranker), and provides a full evaluation framework to compare their performance.
 
+### Module 2: Mastering Agentic Architecture
+
+- **5. [`5_Manual_ReAct_Loop.ipynb`](./5_Manual_ReAct_Loop.ipynb)**
+
+  - A first-principles approach to understanding agents by building one from scratch. This lab manually implements the `Thought -> Action -> Observation` loop to reveal the core logic of agentic reasoning.
+
+- **6. [`6_The_Evolution_of_LangChain_Agents.ipynb`](./6_The_Evolution_of_LangChain_Agents.ipynb)**
+  - A comparative analysis of agent creation in LangChain. This notebook contrasts the classic `ReAct` agent with the modern, reliable **Tool Calling** approach, demonstrating the evolution toward more robust and production-ready agent designs.
+
 ---
 
 ## How to Use
