@@ -47,7 +47,11 @@ This repository explores the entire stack required for building modern AI applic
   - A first-principles approach to understanding agents by building one from scratch. This lab manually implements the `Thought -> Action -> Observation` loop to reveal the core logic of agentic reasoning.
 
 - **6. [`6_The_Evolution_of_LangChain_Agents.ipynb`](./6_The_Evolution_of_LangChain_Agents.ipynb)**
+
   - A comparative analysis of agent creation in LangChain. This notebook contrasts the classic `ReAct` agent with the modern, reliable **Tool Calling** approach, demonstrating the evolution toward more robust and production-ready agent designs.
+
+- **7. [`7_Agent_Memory_and_Routing.ipynb`](./7_Agent_Memory_and_Routing.ipynb)**
+  - The capstone lab for Module 2. This notebook builds a single agent that can intelligently route between multiple tools (RAG vs. a standard tool) and maintain conversational memory.
 
 ---
 
@@ -75,6 +79,5 @@ pip install openai anthropic ollama faiss-cpu chromadb pypdf beautifulsoup4 lang
 
 This repository is actively being updated as I progress through the curriculum. Future modules will include:
 
-- **Module 2:** Mastering Agentic Architecture (Building agents from scratch, using tools, managing memory).
 - **Module 3:** Productionizing the Chatbot (FastAPI, Streaming, Observability with LangSmith, Docker).
 - **Module 4:** Advanced Evaluation and The Future (Agent Evaluation, Multi-Agent Systems).
