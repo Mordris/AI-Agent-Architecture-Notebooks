@@ -1,0 +1,5 @@
+venv
+__pycachce__
+*.pyc
+.env
+chroma_server_db

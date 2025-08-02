@@ -1,0 +1,10 @@
+# requirements.txt
+
+python-dotenv
+langchain
+langchain-openai
+langchain-chroma
+pypdf
+chromadb
+uvicorn
+fastapi
