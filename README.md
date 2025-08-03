@@ -1,6 +1,6 @@
 # AI Agent Architecture: From Notebooks to Production
 
-Welcome to my portfolio of hands-on labs, notebooks, and projects, chronicling my journey through the "MentorAI Masterclass" curriculum. This repository documents the end-to-end process of building a production-grade AI application, progressing from fundamental concepts to a fully deployable, observable, and intelligent AI agent.
+Welcome to my portfolio of hands-on labs, notebooks, and projects, chronicling my journey through my AI-Agents curriculum. This repository documents the end-to-end process of building a production-grade AI application, progressing from fundamental concepts to a fully deployable, observable, and intelligent AI agent.
 
 Each entry serves as a practical demonstration of a core concept, complete with code, analysis, and key learnings.
 
