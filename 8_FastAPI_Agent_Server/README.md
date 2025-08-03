@@ -1,6 +1,6 @@
 # Production-Ready FastAPI Server for an AI Agent
 
-This project represents the capstone for Module 3 of the MentorAI Masterclass, focusing on **Productionization**. We take the advanced, multi-tool, memory-equipped AI agent developed in the previous modules and build a robust, production-grade infrastructure around it.
+This project represents the capstone for Module 3, focusing on **Productionization**. We take the advanced, multi-tool, memory-equipped AI agent developed in the previous modules and build a robust, production-grade infrastructure around it.
 
 This is not a notebook; it is a complete, runnable web application built with modern best practices.
 
