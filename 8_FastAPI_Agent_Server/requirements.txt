@@ -1,10 +1,18 @@
 # requirements.txt
 
+# Core FastAPI Server
+fastapi
+uvicorn
 python-dotenv
+
+# Core LangChain Libraries (Modern versions)
 langchain
 langchain-openai
+langchain-community
+
+# ChromaDB Client Library (compatible with modern servers)
 langchain-chroma
-pypdf
 chromadb
-uvicorn
-fastapi
+
+# Document Loader
+pypdf
