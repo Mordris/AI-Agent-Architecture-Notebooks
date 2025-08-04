@@ -1,0 +1,29 @@
+services:
+  # Our FastAPI application service
+  api:
+    build: . # Build the image from the Dockerfile in the current directory
+    ports:
+      - "8000:8000" # Map port 8000 on our local machine to port 8000 in the container
+    volumes:
+      - .:/app # Mount the current directory into the container for live code reloading
+    environment:
+      # Pass environment variables from our .env file
+      - PYTHONUNBUFFERED=1
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+      - LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT}
+      - LANGCHAIN_ENDPOINT=${LANGCHAIN_ENDPOINT}
+    depends_on:
+      - chroma # Tell Docker to start the chroma service BEFORE starting the api service
+
+  # The ChromaDB server service
+  chroma:
+    image: chromadb/chroma:latest
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+
+volumes:
+  chroma_data: # Define the named volume for persistence

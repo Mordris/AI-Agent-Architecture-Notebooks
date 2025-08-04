@@ -7,20 +7,7 @@ from langchain.agents import tool, create_openai_tools_agent, AgentExecutor
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 import chromadb
 
-# --- 1. Initialize Re-usable Components (ONCE) ---
-print("--- Connecting to ChromaDB server for agent ---")
-client = chromadb.HttpClient(host="localhost", port=8001)
-embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
-vector_store = Chroma(
-    client=client,
-    collection_name="transformer_docs",
-    embedding_function=embedding_model,
-)
-retriever = vector_store.as_retriever(search_kwargs={"k": 3})
-print("--- Agent connection to ChromaDB successful ---")
-
-
-# --- 2. Define the Tools ---
+# --- 1. Define the Tools ---
 @tool
 def get_current_time(tool_input: str = "") -> str:
     """
@@ -36,13 +23,25 @@ def get_knowledge_from_library(query: str) -> str:
     This tool searches a library of documents about the Transformer architecture
     and attention mechanisms. Use it for any questions about these topics.
     """
-    # FIX: Using .invoke() instead of the deprecated .get_relevant_documents()
+    # --- LAZY INITIALIZATION ---
+    # The connection to ChromaDB is now made ONLY when this tool is called.
+    print("--- Connecting to ChromaDB inside the tool ---")
+    client = chromadb.HttpClient(host="chroma", port=8000)
+    embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
+    vector_store = Chroma(
+        client=client,
+        collection_name="transformer_docs",
+        embedding_function=embedding_model,
+    )
+    retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+    
+    print(f"--- Searching for: {query} ---")
     docs = retriever.invoke(query)
     return "\n---\n".join([doc.page_content for doc in docs])
 
 tools = [get_current_time, get_knowledge_from_library]
 
-# --- 3. Create the Agent ---
+# --- 2. Create the Agent ---
 llm = ChatOpenAI(model="gpt-4o", temperature=0)
 
 prompt = ChatPromptTemplate.from_messages([
@@ -54,7 +53,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 agent = create_openai_tools_agent(llm, tools, prompt)
 
-# --- 4. Create the Agent Executor ---
+# --- 3. Create the Agent Executor ---
 agent_executor = AgentExecutor(
     agent=agent,
     tools=tools,

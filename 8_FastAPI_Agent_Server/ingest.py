@@ -14,8 +14,8 @@ load_dotenv()
 # --- Define Constants ---
 PDF_URL = "https://arxiv.org/pdf/1706.03762.pdf"
 COLLECTION_NAME = "transformer_docs"
-CHROMA_HOST = "localhost"
-CHROMA_PORT = 8001
+CHROMA_HOST = "chroma" 
+CHROMA_PORT = 8000
 
 def run_ingestion():
     """
