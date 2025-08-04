@@ -1,6 +1,6 @@
 # AI Agent Architecture: From Notebooks to Production
 
-Welcome to my portfolio of hands-on labs, notebooks, and projects, chronicling my journey through the "MentorAI Masterclass" curriculum. This repository documents the end-to-end process of building a production-grade AI application, progressing from fundamental concepts to a fully deployable, observable, and intelligent AI agent.
+Welcome to my portfolio of hands-on labs and projects, chronicling my journey to master the architecture of modern AI applications. This repository documents the end-to-end process of building a production-grade system, progressing from fundamental concepts to a fully deployable, observable, and intelligent AI agent.
 
 Each entry serves as a practical demonstration of a core concept, complete with code, analysis, and key learnings.
 
@@ -8,15 +8,16 @@ Each entry serves as a practical demonstration of a core concept, complete with 
 
 This repository showcases a comprehensive skill set in modern AI engineering:
 
-- **LLM Interaction & Selection:** Comparing and utilizing proprietary APIs (OpenAI, Anthropic) vs. self-hosted open-source models (Llama 3).
-- **Vector Database Architecture:** Benchmarking and implementing different vector store strategies (in-process vs. client-server).
-- **Advanced RAG Pipelines:** Building and rigorously evaluating state-of-the-art Retrieval Augmented Generation systems to ensure factual accuracy.
+- **LLM Interaction & Selection:** Comparing and utilizing proprietary APIs vs. self-hosted open-source models.
+- **Vector Database Architecture:** Benchmarking and implementing different vector store strategies.
+- **Advanced RAG Pipelines:** Building and rigorously evaluating state-of-the-art Retrieval Augmented Generation systems.
 - **Agentic Design & Orchestration:** Engineering autonomous agents with LangChain that can reason, use multiple tools, and maintain conversational memory.
 - **Productionization & MLOps:**
   - Building robust, high-performance APIs with **FastAPI**.
   - Implementing real-time, low-latency streaming with **Server-Sent Events (SSE)**.
-  - Ensuring deep system visibility and debugging with the **LangSmith** observability platform.
-  - Preparing applications for deployment.
+  - Ensuring deep system visibility and debugging with **LangSmith**.
+  - Containerizing a multi-service application with **Docker and Docker Compose** for reproducible deployment.
+- **AI Evaluation:** Creating automated evaluation suites using the **LLM-as-a-Judge** pattern to programmatically measure agent quality.
 
 ---
 
@@ -38,16 +39,17 @@ This repository showcases a comprehensive skill set in modern AI engineering:
 - **6. [`6_The_Evolution_of_LangChain_Agents.ipynb`](./6_The_Evolution_of_LangChain_Agents.ipynb)**: A comparative analysis of classic vs. modern tool-calling agent architectures.
 - **7. [`7_Agent_Memory_and_Routing.ipynb`](./7_Agent_Memory_and_Routing.ipynb)**: A capstone lab building a single agent that can intelligently route between multiple tools and maintain conversational memory.
 
-### Module 3: Productionizing the Chatbot
+### Module 3 & 4: Productionization & Evaluation
 
-- **8. [`8_FastAPI_Agent_Server/`](./8_FastAPI_Agent_Server/)**: **(Project)** A complete, production-ready FastAPI server for our AI agent. This standalone application features a decoupled architecture, stateful multi-user memory, true token-by-token streaming, and full observability with LangSmith.
+- **8. [`8_FastAPI_Agent_Server/`](./8_FastAPI_Agent_Server/)**: **(Project)** A complete, containerized FastAPI server for our AI agent. This standalone application features a decoupled microservices architecture, persistent data volumes, stateful multi-user memory, true token-by-token streaming, and full observability with LangSmith.
+- **9. [`9_Agent_Evaluation_Suite.ipynb`](./9_Agent_Evaluation_Suite.ipynb)**: A hands-on lab that builds a complete, automated evaluation framework for an AI agent using the powerful "LLM-as-a-Judge" pattern.
 
 ---
 
 ## How to Use This Repository
 
-- **Notebooks (1-7):** These are self-contained Jupyter/Colab notebooks. They can be run individually. Please check the top of each notebook for specific library installation commands.
-- **Projects (8+):** These are complete applications in their own directories. Each project has its own `README.md` file with detailed setup and run instructions.
+- **Notebooks (1-7, 9):** These are self-contained Jupyter/Colab notebooks. They can be run individually.
+- **Projects (8):** The FastAPI Server is a standalone application. Please see the detailed `README.md` file inside that directory for specific setup and run instructions.
 
 **General Setup:**
 
@@ -60,13 +62,4 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-**Note:** All projects and notebooks require API keys for services like OpenAI, LangSmith, and Cohere. Please create a `.env` file in the appropriate project directory or set environment variables as needed.
-
----
-
-## Next Steps: Future Modules
-
-This repository is actively being updated. The final module will cover:
-
-- **Module 3.4:** Containerizing our FastAPI Application with Docker.
-- **Module 4:** Advanced AI Evaluation and The Future of Agents.
+**Note:** All projects and notebooks require API keys for services like OpenAI and LangSmith. Please use a `.env` file or set environment variables as needed.

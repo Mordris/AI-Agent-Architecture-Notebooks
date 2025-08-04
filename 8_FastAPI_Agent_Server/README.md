@@ -1,6 +1,10 @@
 # Production-Ready FastAPI Server for an AI Agent
 
+<<<<<<< HEAD
 This project is the capstone of the "Productionization" module. It takes the advanced, multi-tool, memory-equipped AI agent developed in the course and builds a robust, production-grade infrastructure around it.
+=======
+This project represents the capstone for Module 3, focusing on **Productionization**. We take the advanced, multi-tool, memory-equipped AI agent developed in the previous modules and build a robust, production-grade infrastructure around it.
+>>>>>>> c455c1f41d9b88431d375e19a02ce8f5d101bd33
 
 This is a complete, runnable, containerized web application that demonstrates modern best practices for deploying AI systems.
 
